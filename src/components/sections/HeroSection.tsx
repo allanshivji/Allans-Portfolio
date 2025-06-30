@@ -110,7 +110,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personalInfo }) => {
           }}
         >
           <p className="text-lg sm:text-xl md:text-2xl text-white/60 max-w-3xl mx-auto leading-relaxed">
-            Crafting scalable applications with modern technologie. 
+            Crafting scalable applications with modern technologies. 
             Passionate about creating exceptional user experiences and robust backend systems.
           </p>
         </div>
@@ -150,10 +150,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personalInfo }) => {
           className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-700 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           style={{ opacity: Math.max(0, 1 - scrollY * 0.01) }}
         >
-          {/* <div className="flex flex-col items-center space-y-2">
-            <span className="text-white/40 text-sm">Scroll to explore</span>
-            <ChevronDown size={24} className="text-white/40 animate-bounce" />
-          </div> */}
         </div>
       </div>
     </section>
