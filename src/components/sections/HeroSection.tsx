@@ -72,7 +72,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personalInfo }) => {
                   Photo Holder
                 </div> */}
                 <img 
-                  src="/private/Allan-Shivji-PP.jpeg" 
+                  src="/assets/Allan-Shivji-PP.jpeg" 
                   alt="Allan Michael Shivji" 
                   className="w-full h-full object-cover"
                 />
@@ -123,7 +123,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personalInfo }) => {
           }}
         >
           <ActionButton 
-            onClick={() => downloadFile('/private/Allan_Shivji_Resume.pdf', 'Allan_Shivji_Resume.pdf')} 
+            onClick={() => downloadFile('/assets/Allan_Shivji_Resume.pdf', 'Allan_Shivji_Resume.pdf')} 
             icon={<Download size={20} />}
           >
             Download Resume

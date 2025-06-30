@@ -16,7 +16,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({ personalInfo, 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-4 transition-opacity duration-500">
       <ActionButton
-        onClick={() => downloadFile('/private/Allan_Shivji_Resume.pdf', 'Allan_Shivji_Resume.pdf')}
+        onClick={() => downloadFile('/assets/Allan_Shivji_Resume.pdf', 'Allan_Shivji_Resume.pdf')}
         icon={<Download size={18} />}
         variant="primary"
       />
