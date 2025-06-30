@@ -90,8 +90,8 @@ const App: React.FC = () => {
       <HeroSection personalInfo={personalInfo} />
       <AboutSection />
       <ExperienceSection experiences={workExperience} />
-      <ProjectsSection projects={projects} />
       <SkillsSection skills={skills} />
+      <ProjectsSection projects={projects} />
       <EducationSection education={education} />
       <ContactSection personalInfo={personalInfo} />
       
