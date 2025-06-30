@@ -4,7 +4,7 @@ import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { GradientText } from '../ui/GradientText';
 import { ActionButton } from '../ui/ActionButton';
 import { PersonalInfo } from '../../types/portfolio.types';
-import { downloadFile } from '../../utils/downloadResume';
+import { downloadFile } from '../../utils/downloadFile';
 
 interface HeroSectionProps {
   personalInfo: PersonalInfo;
@@ -49,17 +49,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personalInfo }) => {
     return () => clearInterval(interval);
   }, []);
 
-  // const downloadResume = () => {
-  //   const link = document.createElement('a');
-  //   link.href = '/resume.pdf';
-  //   link.download = 'Allan_Shivji_Resume.pdf';
-  //   link.click();
-  // };
-
   // Apple-style scroll calculations
   const heroTransform = scrollY * 0.5;
   const titleScale = Math.max(0.7, 1 - scrollY * 0.001);
-  const contentOpacity = Math.max(0, 1 - scrollY * 0.003);
+  const contentOpacity = Math.max(0, 1 - scrollY * 0.0012);
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden" style={{ paddingTop: '60px' }}>
@@ -71,21 +64,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personalInfo }) => {
         }}
       >
         {/* Profile Photo */}
-        <div className={`mb-8 transition-all duration-1000 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`mb-8 mt-8 transition-all duration-1000 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="flex justify-center mb-8">
             <div className="relative group">
-              <div className="w-40 h-40 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 border-2 border-white/10 backdrop-blur-xl flex items-center justify-center overflow-hidden transition-all duration-500 group-hover:scale-105 group-hover:border-white/30">
-                {/* Placeholder - Replace src with your actual photo */}
-                <div className="w-full h-full bg-gradient-to-br from-blue-400/10 to-purple-400/10 flex items-center justify-center text-white/60 text-sm">
-                  Your Photo
-                </div>
-                {/* Uncomment and add your photo:
+              <div className="w-52 h-52 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 border-2 border-white/10 backdrop-blur-xl flex items-center justify-center overflow-hidden transition-all duration-500 group-hover:scale-105 group-hover:border-white/30">
+                {/* <div className="w-full h-full bg-gradient-to-br from-blue-400/10 to-purple-400/10 flex items-center justify-center text-white/60 text-sm">
+                  Photo Holder
+                </div> */}
                 <img 
-                  src="/path-to-your-photo.jpg" 
+                  src="/private/Allan-Shivji-PP.jpeg" 
                   alt="Allan Michael Shivji" 
                   className="w-full h-full object-cover"
                 />
-                */}
               </div>
               {/* Subtle glow effect */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
@@ -133,7 +123,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personalInfo }) => {
           }}
         >
           <ActionButton 
-            onClick={() => downloadFile('Allan_Shivji_Resume.pdf', 'Allan_Shivji_Resume.pdf')} 
+            onClick={() => downloadFile('/private/Allan_Shivji_Resume.pdf', 'Allan_Shivji_Resume.pdf')} 
             icon={<Download size={20} />}
           >
             Download Resume

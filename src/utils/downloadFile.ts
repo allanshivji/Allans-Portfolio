@@ -1,6 +1,5 @@
 
-export const downloadFile = (filePath: string = 'Allan_Shivji_Resume.pdf', filename: string = 'Allan_Shivji_Resume.pdf'): void => {
-  console.log('Downloading resume:', filename);
+export const downloadFile = (filePath: string = '/private/Allan_Shivji_Resume.pdf', filename: string = 'Allan_Shivji_Resume.pdf'): void => {
 
   try {
     const link = document.createElement('a');
