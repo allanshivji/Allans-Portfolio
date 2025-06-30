@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Download, Linkedin, Github, ChevronDown } from 'lucide-react';
+import { Download, Linkedin, Github } from 'lucide-react';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { GradientText } from '../ui/GradientText';
 import { ActionButton } from '../ui/ActionButton';
