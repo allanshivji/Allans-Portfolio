@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TopBanner: React.FC = () => {
+export const TopBanner: React.FC = () => {
   return (
     <div className="fixed top-0 w-full z-50 bg-gradient-to-r from-blue-600/10 to-purple-600/10 backdrop-blur-xl border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 py-2">
@@ -14,5 +14,3 @@ const TopBanner: React.FC = () => {
     </div>
   );
 };
-
-export default TopBanner;

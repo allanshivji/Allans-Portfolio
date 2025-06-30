@@ -1,6 +1,19 @@
-export const downloadResume = () => {
-  const link = document.createElement('a');
-  link.href = '/resume.pdf';
-  link.download = 'Allan_Shivji_Resume.pdf';
-  link.click();
+
+export const downloadFile = (filePath: string = 'Allan_Shivji_Resume.pdf', filename: string = 'Allan_Shivji_Resume.pdf'): void => {
+  console.log('Downloading resume:', filename);
+
+  try {
+    const link = document.createElement('a');
+    link.href = filePath
+    link.download = filename;
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+
+  } catch (error) {
+    console.error('Failed to download resume:', error);
+    window.open('/assets/Allan_Shivji_Resume.pdf', '_blank');
+  }
 };

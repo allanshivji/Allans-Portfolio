@@ -1,11 +1,15 @@
 import React from 'react';
-import AnimatedSection from '../components/AnimatedSection';
-import GlassCard from '../components/GlassCard';
-import GradientText from '../components/GradientText';
-import { Education } from '../types';
-import { Calendar, MapPin } from 'lucide-react';
+import { MapPin, Calendar } from 'lucide-react';
+import { AnimatedSection } from '../ui/AnimatedSection';
+import { GlassCard } from '../ui/GlassCard';
+import { GradientText } from '../ui/GradientText';
+import { Education } from '../../types/portfolio.types';
 
-const EducationSection: React.FC<{ education: Education[] }> = ({ education }) => {
+interface EducationSectionProps {
+  education: Education[];
+}
+
+export const EducationSection: React.FC<EducationSectionProps> = ({ education }) => {
   return (
     <section id="education" className="py-32 bg-gray-900/50">
       <div className="max-w-7xl mx-auto px-6">
@@ -43,5 +47,3 @@ const EducationSection: React.FC<{ education: Education[] }> = ({ education }) =
     </section>
   );
 };
-
-export default EducationSection;

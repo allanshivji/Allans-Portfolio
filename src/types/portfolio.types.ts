@@ -34,3 +34,9 @@ export interface Education {
 export interface SkillCategory {
   [key: string]: string[];
 }
+
+export interface StatItem {
+  icon: React.ReactNode;
+  title: string;
+  value: string;
+}

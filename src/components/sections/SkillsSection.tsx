@@ -1,11 +1,15 @@
 import React from 'react';
-import AnimatedSection from '../components/AnimatedSection';
-import GlassCard from '../components/GlassCard';
-import GradientText from '../components/GradientText';
-import { Code, Cpu, Server, Database, Award } from 'lucide-react';
-import { SkillCategory } from '../types';
+import { Code, Server, Database, Cpu, Award } from 'lucide-react';
+import { AnimatedSection } from '../ui/AnimatedSection';
+import { GlassCard } from '../ui/GlassCard';
+import { GradientText } from '../ui/GradientText';
+import { SkillCategory } from '../../types/portfolio.types';
 
-const SkillsSection: React.FC<{ skills: SkillCategory }> = ({ skills }) => {
+interface SkillsSectionProps {
+  skills: SkillCategory;
+}
+
+export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills }) => {
   const getIconForCategory = (category: string) => {
     if (category.includes('Programming')) return <Code className="text-blue-400" size={24} />;
     if (category.includes('Frontend')) return <Cpu className="text-purple-400" size={24} />;
@@ -33,8 +37,8 @@ const SkillsSection: React.FC<{ skills: SkillCategory }> = ({ skills }) => {
                 </div>
                 <div className="space-y-3">
                   {skillList.map((skill, idx) => (
-                    <div
-                      key={idx}
+                    <div 
+                      key={idx} 
                       className="flex items-center space-x-3 group hover:translate-x-1 transition-transform duration-300"
                     >
                       <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full group-hover:scale-125 transition-transform duration-300" />
@@ -50,5 +54,3 @@ const SkillsSection: React.FC<{ skills: SkillCategory }> = ({ skills }) => {
     </section>
   );
 };
-
-export default SkillsSection;

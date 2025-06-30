@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
-const useIntersectionObserver = (threshold = 0.1) => {
+export const useIntersectionObserver = (threshold = 0.1) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -23,5 +23,3 @@ const useIntersectionObserver = (threshold = 0.1) => {
 
   return [ref, isVisible] as const;
 };
-
-export default useIntersectionObserver;

@@ -1,17 +1,11 @@
 import React from 'react';
-import { MapPin, Mail, TrendingUp, Award, Users, Code } from 'lucide-react';
-import GradientText from '../components/GradientText';
-import AnimatedSection from '../components/AnimatedSection';
-import GlassCard from '../components/GlassCard';
+import { MapPin, Mail } from 'lucide-react';
+import { AnimatedSection } from '../ui/AnimatedSection';
+import { GlassCard } from '../ui/GlassCard';
+import { GradientText } from '../ui/GradientText';
+import { aboutStats } from '../../data/portfolioData';
 
-const AboutSection: React.FC = () => {
-  const stats = [
-    { icon: <TrendingUp className="text-blue-400" size={24} />, title: 'Performance', value: '35% improvement' },
-    { icon: <Award className="text-purple-400" size={24} />, title: 'Quality', value: '40% bug reduction' },
-    { icon: <Users className="text-green-400" size={24} />, title: 'Leadership', value: 'Team mentoring' },
-    { icon: <Code className="text-orange-400" size={24} />, title: 'Innovation', value: 'Micro frontends' },
-  ];
-
+export const AboutSection: React.FC = () => {
   return (
     <section id="about" className="py-32 relative">
       <div className="max-w-7xl mx-auto px-6">
@@ -25,13 +19,13 @@ const AboutSection: React.FC = () => {
           <AnimatedSection delay={200}>
             <div className="space-y-6">
               <p className="text-2xl text-white/80 leading-relaxed">
-                I'm a passionate Full Stack Developer with over 4 years of experience building
-                scalable applications that serve thousands of users in the healthcare and
+                I'm a passionate Full Stack Developer with over 4 years of experience building 
+                scalable applications that serve thousands of users in the healthcare and 
                 agricultural technology sectors.
               </p>
               <p className="text-lg text-white/60 leading-relaxed">
-                My expertise spans modern web technologies including React, TypeScript, Node.js,
-                and cloud platforms. I believe in writing clean, maintainable code and creating
+                My expertise spans modern web technologies including React, TypeScript, Node.js, 
+                and cloud platforms. I believe in writing clean, maintainable code and creating 
                 intuitive user experiences that make a real difference.
               </p>
               <div className="flex flex-wrap gap-6 pt-6">
@@ -49,9 +43,11 @@ const AboutSection: React.FC = () => {
 
           <AnimatedSection delay={400}>
             <div className="grid grid-cols-2 gap-6">
-              {stats.map((stat, index) => (
+              {aboutStats.map((stat, index) => (
                 <GlassCard key={index} className="p-8 text-center">
-                  <div className="flex justify-center mb-4">{stat.icon}</div>
+                  <div className="flex justify-center mb-4">
+                    {stat.icon}
+                  </div>
                   <h3 className="text-lg font-semibold text-white mb-2">{stat.title}</h3>
                   <p className="text-white/60 text-sm">{stat.value}</p>
                 </GlassCard>
@@ -63,5 +59,3 @@ const AboutSection: React.FC = () => {
     </section>
   );
 };
-
-export default AboutSection;

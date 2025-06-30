@@ -1,11 +1,15 @@
 import React from 'react';
 import { Calendar } from 'lucide-react';
-import AnimatedSection from '../components/AnimatedSection';
-import GlassCard from '../components/GlassCard';
-import GradientText from '../components/GradientText';
-import { WorkExperience } from '../types';
+import { AnimatedSection } from '../ui/AnimatedSection';
+import { GlassCard } from '../ui/GlassCard';
+import { GradientText } from '../ui/GradientText';
+import { WorkExperience } from '../../types/portfolio.types';
 
-const ExperienceSection: React.FC<{ workExperiences: WorkExperience[] }> = ({ workExperiences }) => {
+interface ExperienceSectionProps {
+  experiences: WorkExperience[];
+}
+
+export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ experiences }) => {
   return (
     <section id="experience" className="py-32 relative">
       <div className="max-w-7xl mx-auto px-6">
@@ -16,7 +20,7 @@ const ExperienceSection: React.FC<{ workExperiences: WorkExperience[] }> = ({ wo
         </AnimatedSection>
 
         <div className="space-y-12">
-          {workExperiences.map((job, index) => (
+          {experiences.map((job, index) => (
             <AnimatedSection key={index} delay={index * 200}>
               <GlassCard className="p-10">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
@@ -31,7 +35,7 @@ const ExperienceSection: React.FC<{ workExperiences: WorkExperience[] }> = ({ wo
                     <span>{job.duration}</span>
                   </div>
                 </div>
-
+                
                 <div className="grid gap-4">
                   {job.achievements.map((achievement, idx) => (
                     <div key={idx} className="flex items-start space-x-4 group">
@@ -50,5 +54,3 @@ const ExperienceSection: React.FC<{ workExperiences: WorkExperience[] }> = ({ wo
     </section>
   );
 };
-
-export default ExperienceSection;

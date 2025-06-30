@@ -1,10 +1,14 @@
 import React from 'react';
-import AnimatedSection from '../components/AnimatedSection';
-import GlassCard from '../components/GlassCard';
-import GradientText from '../components/GradientText';
-import { Project } from '../types';
+import { AnimatedSection } from '../ui/AnimatedSection';
+import { GlassCard } from '../ui/GlassCard';
+import { GradientText } from '../ui/GradientText';
+import { Project } from '../../types/portfolio.types';
 
-const ProjectsSection: React.FC<{ projects: Project[] }> = ({ projects }) => {
+interface ProjectsSectionProps {
+  projects: Project[];
+}
+
+export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
   return (
     <section id="projects" className="py-32 relative">
       <div className="max-w-7xl mx-auto px-6">
@@ -22,18 +26,18 @@ const ProjectsSection: React.FC<{ projects: Project[] }> = ({ projects }) => {
                   {project.title}
                 </h3>
                 <p className="text-white/70 mb-6 leading-relaxed">{project.description}</p>
-
+                
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech, idx) => (
-                    <span
-                      key={idx}
+                    <span 
+                      key={idx} 
                       className="px-3 py-1 bg-blue-500/10 text-blue-300 rounded-full text-sm border border-blue-500/20 hover:bg-blue-500/20 transition-colors duration-300"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-
+                
                 <div className="space-y-2">
                   {project.highlights.map((highlight, idx) => (
                     <div key={idx} className="flex items-center space-x-3 text-white/60">
@@ -50,5 +54,3 @@ const ProjectsSection: React.FC<{ projects: Project[] }> = ({ projects }) => {
     </section>
   );
 };
-
-export default ProjectsSection;
