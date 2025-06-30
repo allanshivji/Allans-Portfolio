@@ -110,7 +110,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personalInfo }) => {
           }}
         >
           <p className="text-lg sm:text-xl md:text-2xl text-white/60 max-w-3xl mx-auto leading-relaxed">
-            Crafting scalable applications with modern technologies. 
+            Crafting scalable applications with modern technologie. 
             Passionate about creating exceptional user experiences and robust backend systems.
           </p>
         </div>
