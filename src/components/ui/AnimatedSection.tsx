@@ -7,20 +7,18 @@ interface AnimatedSectionProps {
   delay?: number;
 }
 
-export const AnimatedSection: React.FC<AnimatedSectionProps> = ({ 
-  children, 
-  className = "", 
-  delay = 0 
+export const AnimatedSection: React.FC<AnimatedSectionProps> = ({
+  children,
+  className = '',
+  delay = 0
 }) => {
   const [ref, isVisible] = useIntersectionObserver();
-  
+
   return (
     <div
       ref={ref}
       className={`transition-all duration-1000 ease-out ${
-        isVisible 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-8'
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       } ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
