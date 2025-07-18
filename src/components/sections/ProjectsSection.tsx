@@ -22,9 +22,24 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
           {projects.map((project, index) => (
             <AnimatedSection key={index} delay={index * 150}>
               <GlassCard className="p-8 h-full group">
-                <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
-                  {project.title}
-                </h3>
+                <a 
+                  href={project.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-2xl font-semibold text-white mb-4 hover:text-blue-400 transition-colors duration-300"
+                >
+                  <span>{project.title}</span>
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className="w-4 h-4 text-white/50 group-hover:text-white transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition duration-200"
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor" 
+                    strokeWidth="2"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M18 13V18H6V6h5M15 3h6v6M10 14L21 3" />
+                  </svg>
+                </a>
                 <p className="text-white/70 mb-6 leading-relaxed">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">

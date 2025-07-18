@@ -13,6 +13,7 @@ export interface Project {
   description: string;
   technologies: string[];
   highlights: string[];
+  url: string;
 }
 
 export interface WorkExperience {
