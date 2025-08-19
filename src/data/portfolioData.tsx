@@ -50,6 +50,18 @@ export const workExperience: WorkExperience[] = [
 
 export const projects: Project[] = [
   {
+    title: 'Job Tracker MCP Server',
+    url: 'https://github.com/allanshivji/job-tracker-mcp',
+    description:
+      'A Model Context Protocol server for tracking job applications through natural conversation with Claude AI. Manage job search, resumes, and application status updates seamlessly.',
+    technologies: ['Python', 'PostgreSQL', 'SQLAlchemy', 'MCP', 'Pydantic'],
+    highlights: [
+      'Natural language interface with Claude AI',
+      'Multi-resume version management',
+      'Application status tracking and analytics'
+    ]
+  },
+  {
     title: 'Ask Overflow',
     url: 'https://github.com/allanshivji/webDev2FinalProject',
     description:
