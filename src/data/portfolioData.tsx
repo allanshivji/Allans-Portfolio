@@ -62,6 +62,27 @@ export const projects: Project[] = [
     ]
   },
   {
+    title: 'Smart AI Task Board',
+    url: 'https://github.com/allanshivji/Smart-AI-Task-Board',
+    description:
+      "An intelligent task management application that leverages Google's Gemini AI to automatically analyze, categorize, and prioritize tasks. Features real-time collaboration with drag-and-drop functionality and predictive project insights.",
+    technologies: [
+      'React',
+      'TypeScript',
+      'Node.js',
+      'Express',
+      'Google Gemini AI',
+      'Reactstrap',
+      'Bootstrap'
+    ],
+    highlights: [
+      'AI-powered task categorization and priority scoring',
+      'Drag & drop Kanban board with real-time updates',
+      'Intelligent project insights and recommendations',
+      'Full TypeScript implementation with type safety'
+    ]
+  },
+  {
     title: 'Ask Overflow',
     url: 'https://github.com/allanshivji/webDev2FinalProject',
     description:
