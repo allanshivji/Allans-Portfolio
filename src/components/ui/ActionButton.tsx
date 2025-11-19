@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackSocialClick } from '../../utils/analytics';
 
 interface ActionButtonProps {
   children?: React.ReactNode;
@@ -20,6 +21,15 @@ export const ActionButton: React.FC<ActionButtonProps> = ({
   // Determine button type based on href
   const isLinkedIn = href && href.includes('linkedin');
   const isGitHub = href && href.includes('github');
+
+  const handleClick = () => {
+    if (isLinkedIn) {
+      trackSocialClick('LinkedIn');
+    }
+    if (isGitHub) {
+      trackSocialClick('GitHub');
+    }
+  };
 
   const baseClasses = `
     group relative px-8 py-4 rounded-full font-medium transition-all duration-300 
@@ -51,6 +61,7 @@ export const ActionButton: React.FC<ActionButtonProps> = ({
   const props = href
     ? {
         href,
+        onClick: handleClick,
         ...(external && { target: '_blank', rel: 'noopener noreferrer' })
       }
     : { onClick };
