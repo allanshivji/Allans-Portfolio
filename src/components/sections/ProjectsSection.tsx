@@ -3,6 +3,7 @@ import { AnimatedSection } from '../ui/AnimatedSection';
 import { GlassCard } from '../ui/GlassCard';
 import { GradientText } from '../ui/GradientText';
 import { Project } from '../../types/portfolio.types';
+import { trackProjectClick } from '../../utils/analytics';
 
 interface ProjectsSectionProps {
   projects: Project[];
@@ -26,6 +27,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
               <GlassCard className='p-8 h-full group'>
                 <a
                   href={project.url}
+                  onClick={() => trackProjectClick(project.title)}
                   target='_blank'
                   rel='noopener noreferrer'
                   className='flex items-center space-x-2 text-2xl font-semibold text-white mb-4 hover:text-blue-400 transition-colors duration-300'

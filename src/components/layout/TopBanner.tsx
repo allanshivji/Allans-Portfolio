@@ -9,7 +9,7 @@ export const TopBanner: React.FC = () => {
           <span className='text-white/70'>Available for new opportunities</span>
           <div className='hidden md:block'>•</div>
           <span className='hidden md:inline text-white/50'>
-            Currently based in United States
+            Currently based in India
           </span>
         </div>
       </div>

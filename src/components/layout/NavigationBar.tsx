@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { GradientText } from '../ui/GradientText';
 import { PersonalInfo } from '../../types/portfolio.types';
+import { trackNavigationClick } from '../../utils/analytics';
 
 interface NavigationBarProps {
   personalInfo: PersonalInfo;
@@ -20,8 +21,9 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
   }, [scrollY]);
 
   // Close mobile menu when clicking on a nav item
-  const handleNavClick = () => {
+  const handleNavClick = (label: string) => {
     setIsMobileMenuOpen(false);
+    trackNavigationClick(label);
   };
 
   // Prevent body scroll when mobile menu is open
@@ -79,6 +81,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
                 style={{
                   transitionDelay: `${index * 50}ms`
                 }}
+                onClick={() => trackNavigationClick(item.label)}
               >
                 {item.label}
                 <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full'></span>
@@ -139,7 +142,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
               <a
                 key={item.href}
                 href={item.href}
-                onClick={handleNavClick}
+                onClick={() => handleNavClick(item.label)}
                 className={`
                   text-xl font-light text-white/80 hover:text-white 
                   transition-all duration-300 hover:translate-x-2 relative group

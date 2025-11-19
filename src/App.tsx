@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { initializeAnalytics, trackPageView } from './utils/analytics';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 import { TopBanner } from './components/layout/TopBanner';
 import { NavigationBar } from './components/layout/NavigationBar';
@@ -21,6 +22,14 @@ import {
 
 const App: React.FC = () => {
   const scrollY = useScrollAnimation();
+
+  useEffect(() => {
+    // Initialize Google Analytics
+    initializeAnalytics();
+
+    // Track initial page view
+    trackPageView(window.location.pathname + window.location.search);
+  }, []);
 
   return (
     <div className='min-h-screen bg-black text-white overflow-x-hidden relative'>
