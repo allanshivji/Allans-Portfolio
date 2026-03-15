@@ -20,10 +20,25 @@ export const personalInfo: PersonalInfo = {
 
 export const workExperience: WorkExperience[] = [
   {
+    title: 'SOFTWARE ENGINEER',
+    company: 'Acies, LLP',
+    location: 'Goa, India',
+    duration: 'January 2026 - Present',
+    achievements: [
+      'Built a full-stack Row-Level Security (RLS) system (React, FastAPI, PostgreSQL) with an admin UI for user, group, and exception-based access control, achieving compliance alignment for banking-sector clients.',
+      "Architected a dynamic white-labelling theming system across Revolutio's microfrontend architecture spanning BI and Datahub modules serving fintech, banking, and HR clients, reducing enterprise onboarding time by ~60%.",
+      'Leading development of a Media Manager module backed by Azure Blob Storage with chunked uploads, permission scoped sharing, and role-based access projected to support 10,000+ assets per tenant across 3+ enterprise deployments.',
+      'Drove full-stack performance optimization across React and FastAPI, reducing API response time by ~30% and frontend bundle size by ~25% through query optimization, lazy loading, and profiling.',
+      'Built interactive data visualizations for the Revolutio BI module using React and Apache Echarts, enabling tenant users to explore and analyze multi-source datasets aggregated via Datahub.',
+      "Translated Figma designs into pixel perfect, responsive React components with high fidelity to UX specifications, ensuring visual consistency across the platform's multi-tenant interface.",
+      'Leading and mentoring a team of 4 engineers across active feature streams, maintaining consistent sprint delivery and enforcing code quality standards through structured reviews.'
+    ]
+  },
+  {
     title: 'SOFTWARE DEVELOPER',
     company: 'Aggio, LLC',
     location: 'St. Louis, MO',
-    duration: 'August 2020 - Present',
+    duration: 'August 2020 - January 2025',
     achievements: [
       'Developed scalable full-stack application using React, TypeScript, Material-UI, and Redux, ensuring high performance and seamless user experiences for the poultry and veterinary industries.',
       'Architected and implemented micro frontend-based UI, enabling modular and maintainable application structures.',
